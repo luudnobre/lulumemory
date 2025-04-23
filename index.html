@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>🧠 Jogo da Memória</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#1c1c1c">
+</head>
+<body>
+  <div class="game-container">
+
+    <h1>memory 🪴 </h1>
+
+    <!-- Escolha de dificuldade -->
+    <div class="controls">
+      <label for="difficulty">Dificuldade:</label>
+      <select id="difficulty" onchange="startGame()">
+        <option value="easy">Fácil (4x2)</option>
+        <option value="medium" selected>Médio (4x4)</option>
+        <option value="hard">Difícil (6x6)</option>
+      </select>
+
+      <!-- Escolha de tema -->
+      <label for="theme">Tema:</label>
+      <select id="theme" onchange="changeTheme()">
+        <option value="dark" selected>Escuro</option>
+        <option value="light">Claro</option>
+        <option value="neon">Neon</option>
+      </select>
+    </div>
+
+    <!-- Cronômetro e movimentos -->
+    <div class="stats">
+      ⏱️ Tempo: <span id="timer">00:00</span> |
+      🧮 Movimentos: <span id="moves">0</span>
+    </div>
+
+    <!-- Tabuleiro do jogo -->
+    <div id="game-board" class="board"></div>
+
+    <!-- Mensagem de vitória -->
+    <p id="win-message" class="hidden">🎉 Parabéns! Você venceu! 🥳</p>
+
+    <!-- Ranking -->
+    <div id="ranking" class="ranking hidden">
+      <h3>🏆 Recordes</h3>
+      <ol id="ranking-list"></ol>
+    </div>
+
+    <!-- Botão de reiniciar -->
+    <button onclick="startGame()">🔁 Recomeçar</button>
+
+    <!-- Botão GitHub -->
+    <a href="https://github.com/luudnobre" class="github-btn" target="_blank" rel="noopener">
+      <span>code by lulu</span>
+    </a>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
